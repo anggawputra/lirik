@@ -1,1 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Kumpulan Lagu Daerah</title>
+</head>
+<body class="bg-gradient-to-br from-gray-100 to-gray-200 min-h-screen py-12 px-4 sm:px-6">
+    <div class="max-w-7xl mx-auto">
+        <!-- Header -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-gray-900 mb-4">Kumpulan Lagu Daerah</h1>
+            <p class="text-gray-600">Koleksi Lirik Lagu Daerah Indonesia</p>
+        </div>
 
+        <!-- Cards Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Card 1 - Manuk Dadali -->
+            <a href="./manukdadali.html" class="group">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                    <!-- Card Image -->
+                    <div class="h-48 bg-gradient-to-r from-red-500 to-red-600 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="text-6xl">🦅</span>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/50 to-transparent p-4">
+                            <h3 class="text-white text-xl font-bold">Manuk Dadali</h3>
+                            <p class="text-gray-200 text-sm">Sunda, Jawa Barat</p>
+                        </div>
+                    </div>
+                    <!-- Card Content -->
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Lagu kebanggaan Sunda yang menggambarkan burung garuda sebagai lambang negara Indonesia.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span class="mr-2">🎵</span>
+                            <span>Lirik Sunda & Terjemahan</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Coming Soon Cards -->
+            <div class="bg-white/80 rounded-xl shadow overflow-hidden transition-all duration-300 backdrop-blur-sm">
+                <div class="h-48 bg-gradient-to-r from-gray-400 to-gray-500 relative overflow-hidden flex items-center justify-center">
+                    <span class="text-white text-xl font-semibold">Coming Soon</span>
+                </div>
+                <div class="p-6">
+                    <p class="text-gray-500">More songs will be added soon...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="mt-12 flex justify-center">
+            <nav class="flex items-center gap-2">
+                <button class="px-4 py-2 bg-white text-gray-500 rounded-lg shadow hover:bg-gray-50 disabled:opacity-50" disabled>
+                    Previous
+                </button>
+                <div class="flex items-center gap-1">
+                    <span class="px-4 py-2 bg-red-600 text-white rounded-lg">1</span>
+                    <span class="px-4 py-2 bg-white text-gray-600 rounded-lg hover:bg-gray-50 cursor-not-allowed">2</span>
+                    <span class="px-4 py-2 bg-white text-gray-600 rounded-lg hover:bg-gray-50 cursor-not-allowed">3</span>
+                </div>
+                <button class="px-4 py-2 bg-white text-gray-500 rounded-lg shadow hover:bg-gray-50 disabled:opacity-50" disabled>
+                    Next
+                </button>
+            </nav>
+        </div>
+    </div>
+</body>
+</html>
