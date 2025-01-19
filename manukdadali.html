@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
+    <title>Lirik Manuk Dadali</title>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 min-h-screen transition-colors duration-200">
+<script>
+        function toggleDarkMode() {
+            document.documentElement.classList.toggle('dark');
+        }
+
+        function changeTextSize(action) {
+            const table = document.getElementById('lyrics-table');
+            const currentSize = parseInt(table.getAttribute('data-size') || '0');
+            const sizes = ['text-sm', 'text-base', 'text-lg', 'text-xl'];
+            
+            let newSize = action === 'increase' ? currentSize + 1 : currentSize - 1;
+            newSize = Math.max(0, Math.min(newSize, sizes.length - 1));
+            
+            // Remove all size classes
+            table.classList.remove(...sizes);
+            // Add new size class
+            table.classList.add(sizes[newSize]);
+            table.setAttribute('data-size', newSize.toString());
+
+            // Update button states
+            document.getElementById('decrease-btn').disabled = newSize === 0;
+            document.getElementById('increase-btn').disabled = newSize === sizes.length - 1;
+        }
+    </script>
+<div class="max-w-6xl mx-auto p-4">
+        <!-- Header with Dark Mode Toggle -->
+        <div class="flex justify-between items-center mb-8 pt-4">
+            <div class="text-center flex-1">
+                <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-2">Manuk Dadali</h1>
+                <p class="text-gray-600 dark:text-gray-400">Lirik Sunda dan Terjemahan Indonesia</p>
+            </div>
+            <div class="fixed top-4 right-4 flex gap-2">
+            <div class="flex gap-2 bg-white dark:bg-gray-800 rounded-lg p-1 shadow-lg">
+                <button 
+                    id="decrease-btn"
+                    onclick="changeTextSize('decrease')"
+                    class="px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors duration-200"
+                    title="Perkecil Teks"
+                >
+                    A-
+                </button>
+                <button 
+                    id="increase-btn"
+                    onclick="changeTextSize('increase')"
+                    class="px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors duration-200"
+                    title="Perbesar Teks"
+                >
+                    A+
+                </button>
+                <button 
+                    onclick="toggleDarkMode()"
+                    class="px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors duration-200"
+                    title="Toggle Dark Mode"
+                >
+                    <span class="dark:hidden">🌙</span>
+                    <span class="hidden dark:inline">☀️</span>
+                </button>
+            </div>
+        </div>
+        </div>
+        
+        <!-- Table Container -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-200 dark:border-gray-700">
+            <div class="overflow-x-auto">
+                <table id="lyrics-table" class="w-full text-base" data-size="1">
+                    <thead>
+                        <tr class="bg-red-600 dark:bg-red-800">
+                            <th scope="col" class="px-6 py-4 text-left text-sm font-semibold text-white tracking-wider w-1/2">Lirik Sunda</th>
+                            <th scope="col" class="px-6 py-4 text-left text-sm font-semibold text-white tracking-wider w-1/2">Terjemahan Indonesia</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+                        <tr class="group hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors duration-200">
+                            <td class="px-6 py-4 text-gray-800 dark:text-gray-200 whitespace-normal">Mesat ngapung luhur jauh di awang-awang</td>
+                            <td class="px-6 py-4 text-gray-600 dark:text-gray-400 whitespace-normal">Terbang melesat tinggi, jauh di awang-awang</td>
+                        </tr>
+                        <tr class="group hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors duration-200">
+                            <td class="px-6 py-4 text-gray-800 dark:text-gray-200 whitespace-normal">Mébérkeun jangjangna bangun taya karingrang</td>
+                            <td class="px-6 py-4 text-gray-600 dark:text-gray-400 whitespace-normal">Merentangkan sayapnya, tampil tanpa keraguan</td>
+                        </tr>
+                        <tr class="group hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors duration-200">
+                            <td class="px-6 py-4 text-gray-800 dark:text-gray-200 whitespace-normal">Sukuna ranggoas reujeung pamatukna ngeluk</td>
+                            <td class="px-6 py-4 text-gray-600 dark:text-gray-400 whitespace-normal">Kakinya panjang dan paruhnya melengkung</td>
+                        </tr>
+                        <tr class="group hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors duration-200">
+                            <td class="px-6 py-4 text-gray-800 dark:text-gray-200 whitespace-normal">Ngepak mega bari hiberna tarik nyuruwuk</td>
+                            <td class="px-6 py-4 text-gray-600 dark:text-gray-400 whitespace-normal">Menyongsong awan sambil terbang dengan cepat</td>
+                        </tr>
+                        <tr class="group hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors duration-200">
+                            <td class="px-6 py-4 text-gray-800 dark:text-gray-200 whitespace-normal">Saha anu bisa nyusul kana tandangna</td>
+                            <td class="px-6 py-4 text-gray-600 dark:text-gray-400 whitespace-normal">Siapa yang bisa menyaingi keberaniannya</td>
+                        </tr>
+                        <tr class="group hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors duration-200">
+                            <td class="px-6 py-4 text-gray-800 dark:text-gray-200 whitespace-normal">Gandang jeung perténtang taya bandinganana</td>
+                            <td class="px-6 py-4 text-gray-600 dark:text-gray-400 whitespace-normal">Gagah perkasa tanpa tandingan</td>
+                        </tr>
+                        <tr class="group hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors duration-200">
+                            <td class="px-6 py-4 text-gray-800 dark:text-gray-200 whitespace-normal">Dipikagimir dipikasérab ku sasama</td>
+                            <td class="px-6 py-4 text-gray-600 dark:text-gray-400 whitespace-normal">Disegani dan disayangi oleh sesama</td>
+                        </tr>
+                        <tr class="group hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors duration-200">
+                            <td class="px-6 py-4 text-gray-800 dark:text-gray-200 whitespace-normal">Taya karempan kasieun lébér wawanénna</td>
+                            <td class="px-6 py-4 text-gray-600 dark:text-gray-400 whitespace-normal">Tanpa ragu tanpa takut, besar nyalinya</td>
+                        </tr>
+                        <tr class="group hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors duration-200">
+                            <td class="px-6 py-4 text-gray-800 dark:text-gray-200 whitespace-normal">Manuk dadali manuk panggagahna</td>
+                            <td class="px-6 py-4 text-gray-600 dark:text-gray-400 whitespace-normal">Burung garuda, burung paling gagah</td>
+                        </tr>
+                        <tr class="group hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors duration-200">
+                            <td class="px-6 py-4 text-gray-800 dark:text-gray-200 whitespace-normal">Perlambang sakti Indonesia Jaya</td>
+                            <td class="px-6 py-4 text-gray-600 dark:text-gray-400 whitespace-normal">Lambang sakti Indonesia jaya</td>
+                        </tr>
+                        <tr class="group hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors duration-200">
+                            <td class="px-6 py-4 text-gray-800 dark:text-gray-200 whitespace-normal">Manuk dadali pangkakoncarana</td>
+                            <td class="px-6 py-4 text-gray-600 dark:text-gray-400 whitespace-normal">Burung garuda, yang paling tersohor</td>
+                        </tr>
+                        <tr class="group hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors duration-200">
+                            <td class="px-6 py-4 text-gray-800 dark:text-gray-200 whitespace-normal">Resep ngahiji rukun sakabéhna</td>
+                            <td class="px-6 py-4 text-gray-600 dark:text-gray-400 whitespace-normal">Senang bersatu, rukun semuanya</td>
+                        </tr>
+                        <tr class="group hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors duration-200">
+                            <td class="px-6 py-4 text-gray-800 dark:text-gray-200 whitespace-normal">Hirup sauyunan tara pahiri-hiri</td>
+                            <td class="px-6 py-4 text-gray-600 dark:text-gray-400 whitespace-normal">Hidup berhimpun tanpa saling iri</td>
+                        </tr>
+                        <tr class="group hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors duration-200">
+                            <td class="px-6 py-4 text-gray-800 dark:text-gray-200 whitespace-normal">Silih pikanyaah teu inggis béla pati</td>
+                            <td class="px-6 py-4 text-gray-600 dark:text-gray-400 whitespace-normal">Saling menyayangi, tak sungkan mengorbankan nyawa</td>
+                        </tr>
+                        <tr class="group hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors duration-200">
+                            <td class="px-6 py-4 text-gray-800 dark:text-gray-200 whitespace-normal">Manuk dadali ngandung siloka sinatria</td>
+                            <td class="px-6 py-4 text-gray-600 dark:text-gray-400 whitespace-normal">Burung garuda adalah lambang kesatriaan</td>
+                        </tr>
+                        <tr class="group hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors duration-200">
+                            <td class="px-6 py-4 text-gray-800 dark:text-gray-200 whitespace-normal">Keur sakumna Bangsa di Nagara Indonesia</td>
+                            <td class="px-6 py-4 text-gray-600 dark:text-gray-400 whitespace-normal">Untuk seluruh bangsa di negara Indonesia</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
